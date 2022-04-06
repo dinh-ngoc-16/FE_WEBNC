@@ -1,8 +1,7 @@
 import * as actionTypes from "./constants";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 
-export const fetchReg = (user, history) => {
+export const fetchReg = (user) => {
   return (dispatch) => {
     //pending
     dispatch(actAuthRequest());

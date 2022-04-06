@@ -13,7 +13,6 @@ const handleCart = (state = cart, action) => {
         const product = action.payload;
         return [...state, { ...product, qty: 1 }];
       }
-      break;
 
     case "DEL":
       const exist1 = state.find((x) => x._id === product._id);
@@ -25,10 +24,8 @@ const handleCart = (state = cart, action) => {
           x._id === product._id ? { ...x, qty: x.qty - 1 } : x,
         );
       }
-      break;
     default:
       return state;
-      break;
   }
 };
 

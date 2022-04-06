@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Route, useLocation, Routes } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { fetchLogin } from "./action";
 
 export default function Login() {
