@@ -9,7 +9,7 @@ export default function Cart() {
 
   useEffect(() => {
     let a;
-    if (state != null || state != []) {
+    if (state !== null || state !== []) {
       if (state.length >= 2) {
         a = state.reduce((a, b) => {
           return a.qty * a.price + b.qty * b.price;
@@ -70,7 +70,7 @@ export default function Cart() {
           );
         })}
         <h2 className="totalAmount">Total Amount: ${total}</h2>
-        {state.length == 0 ? (
+        {state.length === 0 ? (
           <Link to="/" className="btn btn-outline-dark my-5">
             Go To Home Page To Continue Shopping
           </Link>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -69,7 +69,7 @@ export default function Navbar() {
               </button>
             </form> */}
             <div className="buttons">
-              {auth.data == null
+              {auth.data === null
                 ? [
                     <Link to="/login" className="btn btn-outline-dark">
                       <i className="fa fa-sign-in me-1"></i> Login

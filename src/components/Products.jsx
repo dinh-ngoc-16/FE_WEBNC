@@ -18,7 +18,7 @@ export default function Products() {
     let getProducts = async () => {
       setLoading(true);
       let urls;
-      if (cate == "") {
+      if (cate === "") {
         urls = `https://store-backend-dinh.herokuapp.com/api/products?page=${page}`;
       } else {
         urls = `https://store-backend-dinh.herokuapp.com/api/products?category=${cate}&page=${page}`;
@@ -44,10 +44,10 @@ export default function Products() {
     if (Number.isInteger(pages)) {
       setpage(pages - 1);
     }
-    if (pages == "next") {
+    if (pages === "next") {
       setpage(page + 1);
-    } else if (pages == "previous") {
-      if (page == 0) {
+    } else if (pages === "previous") {
+      if (page === 0) {
         setpage(page);
       } else {
         setpage(page - 1);
@@ -64,7 +64,7 @@ export default function Products() {
       if (calcu >= 0) {
         page.push(
           <li className="page-item" onClick={() => onNext(i + 1)}>
-            <a className="page-link">{i + 1}</a>
+            <span className="page-link">{i + 1}</span>
           </li>,
         );
       }
@@ -190,15 +190,15 @@ export default function Products() {
             ]
           )}
         </div>
-        {location.pathname == "/" ? (
+        {location.pathname === "/" ? (
           ""
         ) : (
           <nav aria-label="Page navigation example">
             <ul className="pagination pagination-lg justify-content-end">
               <li className="page-item" onClick={() => onNext("previous")}>
-                <a className="page-link" aria-label="Previous">
+                <span className="page-link" aria-label="Previous">
                   <span aria-hidden="true">«</span>
-                </a>
+                </span>
               </li>
               {
                 /* <li className="page-item">
@@ -208,9 +208,9 @@ export default function Products() {
             </li> */ renderPage()
               }
               <li className="page-item" onClick={() => onNext("next")}>
-                <a className="page-link" aria-label="Next">
+                <span className="page-link" aria-label="Next">
                   <span aria-hidden="true">»</span>
-                </a>
+                </span>
               </li>
             </ul>
           </nav>
